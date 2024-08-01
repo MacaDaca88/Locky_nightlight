@@ -10,11 +10,12 @@ void setup() {
 }
 
 void loop() {
-  LDRsensor();
 
-  if (LEDon == true) {
 
-    ledOnLeft();
-    ledOnRight();
-  }
+  LDRsensor();  // Check LDR againts Thresholds
+
+  ledOnLeft();   // check Left Leds
+  ledOnRight();  // check right leds
+
+  delay(2);  // delay to smooth functions
 }

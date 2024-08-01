@@ -3,21 +3,21 @@
 #define LED_RIGHT 9  // right led bank pwm pin
 #define LDR A2       // ldr sensor pin
 
-#define LIGHTING 500
+#define LIGHTING 200  // threshold for ambient light to trigger leds on
 
-bool LEDon = false;   // led on
-bool LEDonL = false;  // left led on
-bool LEDonR = false;  // right led on
+bool LEDstate = false;   // led on
+bool LEDleft = false;  // left led on
+bool LEDright = false;  // right led on
 
 unsigned long oldTimeL = 0;  // stores the last time Left LEDs were updated
 unsigned long oldTimeR = 0;  // stores the last time Right LEDs were updated
 
-const long timerL = 20;  // interval at which to update LEDs (in milliseconds)
-const long timerR = 1;  // interval at which to update LEDs (in milliseconds)
+const long timerL = 5;  // interval at which to update LEDs (in milliseconds)
+const long timerR = 5;  // interval at which to update LEDs (in milliseconds)
 
-int fadeAmount = 5;        // amount by which to fade the LED
-int brightnessL = 0;       // current brightness for left LED
-int brightnessR = 0;       // current brightness for right LED
+int fadeAmount = 1;   // amount by which to fade the LED
+int brightnessL = 0;  // current brightness for left LED
+int brightnessR = 0;  // current brightness for right LED
 
 void startup() {  // run once at startup
 
