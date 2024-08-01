@@ -4,14 +4,15 @@
 #ifdef AVR
 #define LED_LEFT 10  // left led bank pwm pin 10 nano
 #define LED_RIGHT 9  // right led bank pwm pin 9 nano
+#endif
 
-#else
+#ifdef ATTINY85
 #define LED_LEFT 0   // left led bank pwm pin 10 nano
 #define LED_RIGHT 1  // right led bank pwm pin 9 nano
 #endif
 #define LDR A2  // ldr sensor pin
 
-#define LIGHTING 200  // threshold for ambient light to trigger leds on
+#define LIGHTING 50  // threshold for ambient light to trigger leds on
 
 bool LEDstate = false;  // led on
 bool LEDleft = false;   // left led on
@@ -20,11 +21,11 @@ bool LEDright = false;  // right led on
 unsigned long oldTimeL = 0;  // stores the last time Left LEDs were updated
 unsigned long oldTimeR = 0;  // stores the last time Right LEDs were updated
 
-const long timerL = 10;  // interval at which to update LEDs (in milliseconds)
-const long timerR = 5;  // interval at which to update LEDs (in milliseconds)
+const long timerL = 5;  // interval at which to update LEDs (in milliseconds)
+const long timerR = 1;  // interval at which to update LEDs (in milliseconds)
 
-int fadeAmount = 5;             // amount by which to fade the LED
-unsigned long brightnessL = 255;  // current brightness for left LED
+int fadeAmount = 1;             // amount by which to fade the LED
+unsigned long brightnessL = 0;  // current brightness for left LED
 unsigned long brightnessR = 0;  // current brightness for right LED
 
 void startup() {  // run once at startup

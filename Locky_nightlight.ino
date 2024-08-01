@@ -19,5 +19,5 @@ void loop() {
   ledOnLeft();   // check Left Leds
   ledOnRight();  // check right leds
 
-  // delay(10);  // delay to smooth functions
+   delay(2);  // delay to smooth functions
 }

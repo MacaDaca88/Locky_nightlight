@@ -7,14 +7,13 @@ void ledOnRight() {
   unsigned long TimeR = millis();
   if (TimeR - oldTimeR >= timerR) {
     oldTimeR = TimeR;
+    //Serial.print("Right time : ");
+    //Serial.println(TimeR);
     if (LEDright == true) {
-      // LEDleft = false;  // set left led state off
-      //      Serial.print("Right time : ");
-      //  Serial.println(TimeR);
-      brightnessR += fadeAmount;
-      if (brightnessR <= 0 || brightnessR >= 255) {
-        fadeAmount = -fadeAmount;  // reverse direction of fade
-        brightnessR = constrain(brightnessR, 0, 255);
+      brightnessR -= fadeAmount;
+      if (brightnessR >= 255 || brightnessR <= 0) {
+        fadeAmount = +fadeAmount;  // reverse direction of fade
+        brightnessR = constrain(brightnessR, 255, 0);
       }
       //Serial.print("brightness Right : ");
       //Serial.println(brightnessR);
