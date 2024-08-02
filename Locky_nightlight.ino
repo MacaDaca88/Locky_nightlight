@@ -14,9 +14,8 @@ void setup() {
 
 void loop() {
 
-  SOUNDsensor();
-
-  LDRsensor();  // Check LDR againts Thresholds
-  ledOnLeft();   // check Left Leds
-  ledOnRight();  // check right leds
+  SOUNDsensor();  // Check if clap has happened
+  LDRsensor();    // Check LDR againts Thresholds
+  ledOnLeft();    // Check Left Leds
+  ledOnRight();   // Check right leds
 }
