@@ -3,10 +3,12 @@
 void SOUNDsensor() {
 
   int sound = digitalRead(SOUND);
+
   if (sound == 1) {
-    clap = true;
-    if (clap == true && sound == true) {
-      clap == false;
+    if (clap == false) { // toggle clap state on or off
+      clap = true;
     }
+  } else {
+    clap = false;  // Reset clap state when no sound is detected
   }
 }
