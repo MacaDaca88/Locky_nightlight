@@ -1,4 +1,4 @@
-//pin 9 nano
+// pin 9 nano
 // pin 1 tin85
 
 

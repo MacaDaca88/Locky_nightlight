@@ -16,15 +16,20 @@ bool LEDright = false;  // right led on
 unsigned long oldTimeL = 0;  // stores the last time Left LEDs were updated
 unsigned long oldTimeR = 0;  // stores the last time Right LEDs were updated
 
-const long timerL = 1;  // interval at which to update LEDs (in milliseconds)
-const long timerR = 5;  // interval at which to update LEDs (in milliseconds)
+const long timerL = 10;  // interval at which to update LEDs (in milliseconds)
+const long timerR = 10;  // interval at which to update LEDs (in milliseconds)
 
 int fadeAmount = 1;             // amount by which to fade the LED
 unsigned long brightnessL = 0;  // current brightness for left LED
 unsigned long brightnessR = 0;  // current brightness for right LED
 
+#include "SOUND_SENSOR.h"  // sound loop
+#include "LDR_SENSOR.h"    // ldr loop
+#include "LED_ON_LEFT.h"   // left led loop
+#include "LED_ON_RIGHT.h"  // right led loop
+
 void startup() {  // run once at startup
-  //Serial.begin(9600);
+ // Serial.begin(9600);
 
   pinMode(LED_LEFT, OUTPUT);   // set left leds output
   pinMode(LED_RIGHT, OUTPUT);  // set right leds output
